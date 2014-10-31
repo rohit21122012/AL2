@@ -1,0 +1,8 @@
+echo "Enter the program name"
+read NAME
+nasm -f elf $NAME.asm
+ld -m elf_i386 -o $NAME $NAME.o io.o
+./$NAME
+rm $NAME
+rm $NAME.o
+
